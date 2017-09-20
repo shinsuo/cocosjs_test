@@ -36,6 +36,13 @@ var HelloWorldLayer = cc.Layer.extend({
         return true;
     },
 
+    addSprite:function(pos) {
+        var sp = new cc.Sprite(res.unit_anime_1280103_png);
+        sp.scale = 0.25;
+        sp.setPosition(cc.p(pos.x, pos.y ));
+        this.addChild(sp);
+    },
+
     addSpine:function(pos) {
         var spine = new sp.SkeletonAnimation(res.unit_anime_1280103_json, res.unit_anime_1280103_atlas, 0.25);
         spine.setPosition(cc.p(pos.x, pos.y ));
@@ -50,7 +57,7 @@ var HelloWorldLayer = cc.Layer.extend({
                 event : cc.EventListener.MOUSE,
                 onMouseDown : function(event) {
                     var pos = event.getLocation(); //当前事件发生的光标位置
-                    self.addSpine(pos);
+                    self.addSprite(pos);
                     return true;
                 }
             }), this);
