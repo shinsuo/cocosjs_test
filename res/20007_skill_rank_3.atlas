@@ -1,0 +1,62 @@
+
+20007_skill_rank_3.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill_water-assets/ball_razor_001_1
+  rotate: false
+  xy: 2, 262
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+skill_water-assets/ball_razor_002_1
+  rotate: false
+  xy: 271, 527
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+skill_water-assets/ball_razor_003_1
+  rotate: false
+  xy: 2, 132
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+skill_water-assets/ball_razor_004_1
+  rotate: false
+  xy: 132, 262
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+skill_water-assets/ball_water_01_tex_shuizhu_01_1
+  rotate: false
+  xy: 271, 397
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+skill_water-assets/blast_ground_000_1
+  rotate: false
+  xy: 401, 527
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+skill_water-assets/hammer_wind_00_00
+  rotate: false
+  xy: 2, 2
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+skill_water-assets/light_ef2_00_00
+  rotate: false
+  xy: 2, 392
+  size: 267, 263
+  orig: 267, 263
+  offset: 0, 0
+  index: -1

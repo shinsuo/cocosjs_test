@@ -44,11 +44,24 @@ var HelloWorldLayer = cc.Layer.extend({
     },
 
     addSpine:function(pos) {
-        var spine = new sp.SkeletonAnimation(res.unit_anime_1280103_json, res.unit_anime_1280103_atlas, 0.25);
-        spine.setPosition(cc.p(pos.x, pos.y ));
-        spine.setAnimation(0, 'wait', true);
-        // spine.setSkin("sakana");
-        this.addChild(spine);
+        arr = [
+            "20007_skill_rank_3_full",
+            // "20007_skill_rank_3",
+            // "attack_beast_2000705",
+            // "effect_water",
+            "unit_anime_1280103",
+            "unit_anime_2000705"
+        ];
+        for (var index = 0; index < arr.length; index++) {
+            var element = arr[index];
+            
+            var spine = new sp.SkeletonAnimation("res/"+element+".json", "res/"+element+".atlas", 0.25);
+            spine.setPosition(cc.p(pos.x, pos.y ));
+            spine.setAnimation(0, 'wait', true);
+            // spine.setSkin("sakana");
+            this.addChild(spine);
+        }
+        
     },
     addMouseTouchEvent: function(){
         var self = this;
@@ -57,7 +70,7 @@ var HelloWorldLayer = cc.Layer.extend({
                 event : cc.EventListener.MOUSE,
                 onMouseDown : function(event) {
                     var pos = event.getLocation(); //当前事件发生的光标位置
-                    self.addSprite(pos);
+                    self.addSpine(pos);
                     return true;
                 }
             }), this);

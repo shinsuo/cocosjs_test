@@ -1,0 +1,181 @@
+
+20007_skill_rank_3_full.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill_water-assets/FULL_wave_00_00
+  rotate: false
+  xy: 2, 663
+  size: 350, 350
+  orig: 350, 350
+  offset: 0, 0
+  index: -1
+skill_water-assets/WaterPool_00
+  rotate: false
+  xy: 354, 643
+  size: 240, 135
+  orig: 240, 135
+  offset: 0, 0
+  index: -1
+skill_water-assets/WaterPool_01
+  rotate: false
+  xy: 271, 329
+  size: 240, 135
+  orig: 240, 135
+  offset: 0, 0
+  index: -1
+skill_water-assets/WaterPool_02
+  rotate: false
+  xy: 229, 40
+  size: 240, 135
+  orig: 240, 135
+  offset: 0, 0
+  index: -1
+skill_water-assets/WaterPool_03
+  rotate: false
+  xy: 513, 202
+  size: 240, 135
+  orig: 240, 135
+  offset: 0, 0
+  index: -1
+skill_water-assets/WaterPool_04
+  rotate: false
+  xy: 726, 696
+  size: 240, 135
+  orig: 240, 135
+  offset: 0, 0
+  index: -1
+skill_water-assets/ball_razor_001_1
+  rotate: false
+  xy: 596, 708
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+skill_water-assets/ball_razor_002_1
+  rotate: false
+  xy: 755, 262
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+skill_water-assets/ball_razor_003_1
+  rotate: false
+  xy: 885, 262
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+skill_water-assets/ball_razor_004_1
+  rotate: false
+  xy: 755, 132
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+skill_water-assets/fire_wind_00_00
+  rotate: false
+  xy: 708, 7
+  size: 78, 123
+  orig: 78, 123
+  offset: 0, 0
+  index: -1
+skill_water-assets/green_shin_00_00_00
+  rotate: false
+  xy: 816, 833
+  size: 180, 180
+  orig: 180, 180
+  offset: 0, 0
+  index: -1
+skill_water-assets/hammer_wind_00_00
+  rotate: false
+  xy: 885, 132
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+skill_water-assets/light_ef2_00_00
+  rotate: false
+  xy: 2, 398
+  size: 267, 263
+  orig: 267, 263
+  offset: 0, 0
+  index: -1
+skill_water-assets/storm_00
+  rotate: false
+  xy: 2, 221
+  size: 225, 175
+  orig: 225, 175
+  offset: 0, 0
+  index: -1
+skill_water-assets/storm_01
+  rotate: false
+  xy: 589, 838
+  size: 225, 175
+  orig: 225, 175
+  offset: 0, 0
+  index: -1
+skill_water-assets/storm_02
+  rotate: false
+  xy: 2, 44
+  size: 225, 175
+  orig: 225, 175
+  offset: 0, 0
+  index: -1
+skill_water-assets/storm_03
+  rotate: false
+  xy: 271, 466
+  size: 225, 175
+  orig: 225, 175
+  offset: 0, 0
+  index: -1
+skill_water-assets/tiny_wave_00
+  rotate: false
+  xy: 229, 177
+  size: 235, 150
+  orig: 235, 150
+  offset: 0, 0
+  index: -1
+skill_water-assets/tiny_wave_02
+  rotate: false
+  xy: 498, 491
+  size: 235, 150
+  orig: 235, 150
+  offset: 0, 0
+  index: -1
+skill_water-assets/tiny_wave_04
+  rotate: false
+  xy: 513, 339
+  size: 235, 150
+  orig: 235, 150
+  offset: 0, 0
+  index: -1
+skill_water-assets/tiny_wave_06
+  rotate: false
+  xy: 471, 50
+  size: 235, 150
+  orig: 235, 150
+  offset: 0, 0
+  index: -1
+skill_water-assets/tiny_wave_08
+  rotate: false
+  xy: 735, 544
+  size: 235, 150
+  orig: 235, 150
+  offset: 0, 0
+  index: -1
+skill_water-assets/tiny_wave_10
+  rotate: false
+  xy: 750, 392
+  size: 235, 150
+  orig: 235, 150
+  offset: 0, 0
+  index: -1
+skill_water-assets/water_ball_00_00_00
+  rotate: false
+  xy: 354, 780
+  size: 233, 233
+  orig: 233, 233
+  offset: 0, 0
+  index: -1

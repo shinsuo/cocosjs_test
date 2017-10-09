@@ -1,0 +1,48 @@
+
+effect_water.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+charge_wind_1
+  rotate: false
+  xy: 2, 17
+  size: 146, 174
+  orig: 146, 174
+  offset: 0, 0
+  index: -1
+charge_wind_2
+  rotate: false
+  xy: 2, 193
+  size: 160, 243
+  orig: 160, 243
+  offset: 0, 0
+  index: -1
+charge_wind_3
+  rotate: false
+  xy: 150, 75
+  size: 189, 78
+  orig: 189, 78
+  offset: 0, 0
+  index: -1
+charge_wind_4
+  rotate: false
+  xy: 164, 305
+  size: 254, 131
+  orig: 254, 131
+  offset: 0, 0
+  index: -1
+charge_wind_5
+  rotate: false
+  xy: 420, 358
+  size: 16, 78
+  orig: 16, 78
+  offset: 0, 0
+  index: -1
+water_00_00
+  rotate: false
+  xy: 164, 155
+  size: 203, 148
+  orig: 203, 148
+  offset: 0, 0
+  index: -1

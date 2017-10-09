@@ -1,0 +1,20 @@
+
+attack_beast_2000705.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+explosion_wind_03_tex_fangshe_01
+  rotate: false
+  xy: 2, 68
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+explosion_wind_03_tex_ring_01
+  rotate: false
+  xy: 2, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
