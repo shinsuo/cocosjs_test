@@ -23,6 +23,7 @@ var res = {
     unit_anime_1280103_json16 : "res/effect_water.png",
     unit_anime_1280103_json17 : "res/unit_anime_1280103.png",
     unit_anime_1280103_json18 : "res/unit_anime_2000705.png",
+    circle_png:"res/circle.png"
 };
 
 var g_resources = [];

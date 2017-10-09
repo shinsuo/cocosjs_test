@@ -1,6 +1,18 @@
 
+var updateStepValue = 60;
+var WALLS_WIDTH = 5;
+var WALLS_ELASTICITY = 1;
+var WALLS_FRICTION = 0;
+var DIVIDE = 10;
+
 var HelloWorldLayer = cc.Layer.extend({
     sprite:null,
+    isDraw:false,
+    controller:null,
+    space:null,
+    winSize:null,
+    tarPos:null,
+    phDebugNode:null,
     ctor:function () {
         //////////////////////////////
         // 1. super init first
@@ -11,7 +23,7 @@ var HelloWorldLayer = cc.Layer.extend({
         //    you may modify it.
         // ask the window size
         var size = cc.winSize;
-
+        this.winSize = size;
         /////////////////////////////
         // 3. add your codes below...
         // add a label shows "Hello World"
@@ -33,7 +45,97 @@ var HelloWorldLayer = cc.Layer.extend({
 
         this.addMouseTouchEvent();
 
+        this.controller = this;
+        this.initPhysics();
+        this.initDebugMode(this.controller);
+        this.scheduleUpdate();
+
+
+        this.addWallsAndGround();
+        this.addPhysicsCircle();
         return true;
+    },
+
+    initPhysics:function() {
+        this.space = new cp.Space();
+        this.space.gravity = cp.v(0, 0);
+        this.space.iterations = 30;
+        this.space.sleepTimeThreshold = Infinity;
+        this.space.collisionSlop = Infinity;
+    },
+
+    initDebugMode:function(controller) {
+        this.phDebugNode = new cc.PhysicsDebugNode(this.space);
+        controller.addChild(this.phDebugNode, 10);
+    },
+
+
+    update:function (dt) {
+        this.space.step(dt);
+        this.drawLine();
+    },
+
+    drawLine:function(){
+        if(this.isDraw){
+            // this.space.segmentQueryFirst(this.phNode.getPosition(), this.tarPos,,);
+            this.phDebugNode.drawSegment(this.phNode.getPosition(), this.tarPos, 1, new cc.Color(255,255,255));
+        }
+    },
+
+    addWallsAndGround:function() {
+        var less = 1/DIVIDE;
+        var large = 1-less;
+        this.leftWall = new cp.SegmentShape(this.space.staticBody, new cp.v(this.winSize.width*less, this.winSize.height*less), new cp.v(this.winSize.width*less, this.winSize.height*large), WALLS_WIDTH);
+        this.leftWall.setElasticity(WALLS_ELASTICITY);
+        this.leftWall.setFriction(WALLS_FRICTION);
+        this.space.addStaticShape(this.leftWall);
+
+        this.rightWall = new cp.SegmentShape(this.space.staticBody, new cp.v(this.winSize.width*large, this.winSize.height*large), new cp.v(this.winSize.width*large, 0), WALLS_WIDTH);
+        this.rightWall.setElasticity(WALLS_ELASTICITY);
+        this.rightWall.setFriction(WALLS_FRICTION);
+        this.space.addStaticShape(this.rightWall);
+
+        this.bottomWall = new cp.SegmentShape(this.space.staticBody, new cp.v(this.winSize.width*less, this.winSize.height*less), new cp.v(this.winSize.width*large, this.winSize.height*less), WALLS_WIDTH);
+        this.bottomWall.setElasticity(WALLS_ELASTICITY);
+        this.bottomWall.setFriction(WALLS_FRICTION);
+        this.space.addStaticShape(this.bottomWall);
+
+        this.upperWall = new cp.SegmentShape(this.space.staticBody, new cp.v(this.winSize.width*less, this.winSize.height*large), new cp.v(this.winSize.width*large, this.winSize.height*large), WALLS_WIDTH);
+        this.upperWall.setElasticity(WALLS_ELASTICITY);
+        this.upperWall.setFriction(WALLS_FRICTION);
+        this.space.addStaticShape(this.upperWall);
+    },
+
+    addPhysicsCircle:function () {
+        //#1
+        var circle = cc.Sprite.create("res/circle.png");
+        var mass = 10;
+
+        //#2
+        var nodeSize = circle.getContentSize(),
+            phBody = null,
+            phShape = null,
+            scaleX = 1,
+            scaleY = 1;
+        nodeSize.width *= scaleX;
+        nodeSize.height *= scaleY;
+        this.phNode = cc.PhysicsSprite.create("res/circle.png"),
+
+        //#3
+        phBody = this.space.addBody(new cp.Body(mass, cp.momentForBox(mass, nodeSize.width, nodeSize.height)));
+        phBody.setPos(cc.p(this.winSize.width * 0.5, this.winSize.height * 0.5));
+
+        //#4
+        phShape = this.space.addShape(new cp.CircleShape(phBody, nodeSize.width * 0.5, cc.p(0, 0)));
+        phShape.setFriction(0);
+        phShape.setElasticity(1);
+
+        //#5
+        this.phNode.setBody(phBody);
+        this.phNode.setRotation(0);
+        this.phNode.setScale(1);
+
+        this.controller.addChild(this.phNode);
     },
 
     addSprite:function(pos) {
@@ -70,8 +172,19 @@ var HelloWorldLayer = cc.Layer.extend({
                 event : cc.EventListener.MOUSE,
                 onMouseDown : function(event) {
                     var pos = event.getLocation(); //当前事件发生的光标位置
-                    self.addSpine(pos);
+                    // self.addSpine(pos);
+                    self.isDraw = true;
                     return true;
+                },
+                onMouseMove:function (event) {
+                    var pos = event.getLocation();
+                    if(self.isDraw){
+                        self.tarPos = pos;
+                    }
+                },
+                onMouseUp:function (event) {
+                    var pos = event.getLocation();
+                    self.isDraw = false;
                 }
             }), this);
         }
@@ -82,10 +195,17 @@ var HelloWorldLayer = cc.Layer.extend({
                 onTouchBegan: function(touch, event){
                     //cc.log("touchbegan...");
                     var pos = touch.getLocation(); //当前事件发生的光标位置
-                    self.addSpine(pos);
+                    // self.addSpine(pos);
+                    self.isDraw = true;
                     return true;
                 },
+                onTouchMoved:function(touch, event){
+                    if(isDraw){
+                        self.tarPos = pos;
+                    }
+                },
                 onTouchEnded: function(touch, event) {
+                    self.isDraw = false;
                 }
             });
             cc.eventManager.addListener(self._listener, -9999999);
